@@ -26,5 +26,5 @@ A simple command-line note-taking application that allows users to create, organ
 
 Contributions are welcome! If you have any suggestions or find any issues, please feel free to submit a pull request or open an issue.
 
-## License
+
 
