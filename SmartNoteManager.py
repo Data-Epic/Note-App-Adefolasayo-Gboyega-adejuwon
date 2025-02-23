@@ -136,6 +136,48 @@ class NoteManager:
             print("No matching notes found.")
         
 
+# Create a notes manager
+my_notes = NoteManager()
 
+while True:
+    print("\nNote Manager Menu:")
+    print("A) Add note")
+    print("B) Delete note by ID")
+    print("C) Show all notes")
+    print("D) Search note")
+    print("E) Exit")
 
+    choice = input("Enter your choice (A/B/C/D/E): ").upper()  # Convert to uppercase for easier comparison
+    
+    if choice == "A":
+        note_type = input("ENTER NOTE TYPE (text/reminder): ").lower()
+        content =input("ENTER NOTE CONTENT: ")
+        if note_type == "reminder":
+            reminder_time= input ("ENTER REMINDER TIME (YYYY-MM-DD HH:MM AM/PM): ")
+            my_notes.add_note(note_type, content)
+        else:
+            my_notes.add_note(note_type, content)
+            
+    elif choice == "B":
+        try:
+            note_id = int(input("ENTER NOTE ID: "))
+            my_notes.delete_note(note_id)
+        except ValueError:
+            print ("Invalid input: The input should be a number")
+            
+            
+    elif choice == "C":
+       my_notes.show_notes()
+            
+    
+    elif choice == "D":
+        search_term = input("ENTER SEARCH KEYWORD: ").lower()
+       
+        
+    elif choice == "E":
+        print("Exiting Note Manager.")
+        break
+    
+    else:
+        print("Invalid choice, Please try again")
 
