@@ -5,15 +5,18 @@ class Note:
     """
     A base class representing a note.
     """
-    def __init__(self, content,created_at):
+    def __init__(self, content, created_at=None): #make created_at optional.
         """Initialize Note object
 
         Args:
             content (string): The content of the note
             created_at (datetime): The date and time of the note creation
         """
-        self.content= content
-        self.created_at=datetime.now()
+        self.content = content
+        if created_at is None: #only assign if not passed.
+            self.created_at = datetime.now()
+        else:
+            self.created_at = created_at
         
      #create a method to show note details.        
     def display(self):
